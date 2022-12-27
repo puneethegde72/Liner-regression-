@@ -24,7 +24,7 @@ mean_dep = np.mean(dependent_value)
 # Total number of values
 n = len(independent_value)
 
-#Using the formula to calculate m and c
+#Calculating M and C
 numer = 0
 denom = 0
 for i in range (n):
@@ -32,6 +32,7 @@ for i in range (n):
     denom += (independent_value[i] - mean_ind) ** 2
 m = numer / denom
 c = mean_dep - (m * mean_ind)
+
 # Print coefficients
 print (f"Slope of the linear regression is {m}")
 print(f"Intersept of the linear regression line is {c}")
@@ -48,7 +49,7 @@ print(f"the points of the linear regression line is \n {mymodel}")
 # value of rainfall which needed to be predicted
 x = 275
 
-#predicting the prodactivity of the railfall x
+#predicting the prodactivity of the rainfall x
 y_pred = myfunc(x)
 print(f"predicted value of {x} is {y_pred}")
 
@@ -57,8 +58,8 @@ plt.figure()
 # Ploting Scatter Points
 plt.scatter(leni["Rainfall"], leni["Productivity"], c='#008B45', label='Rainfall Vs productivity')
 
-#Ploting linear regression line Line
-plt.plot(indipendent_value, mymodel , color='#CD3700', label='Regression Line')
+#Ploting linear regression Line
+plt.plot(independent_value, mymodel , color='#CD3700', label='Regression Line')
 
 #Ploting the prediction point in linear regression
 plt.scatter (275, y_pred,c='#68228B', label='Prediction point')
