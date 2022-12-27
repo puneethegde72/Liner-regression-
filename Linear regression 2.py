@@ -43,7 +43,7 @@ def myfunc(x):
     return y
 
 mymodel = list(map(myfunc,leni["Rainfall"]))
-print(f"the points of the linear regression line is /n {mymodel}")
+print(f"the points of the linear regression line is \n {mymodel}")
 
 # value of rainfall which needed to be predicted
 x = 275
