@@ -5,31 +5,31 @@ Created on Mon Dec 26 15:39:34 2022
 @author: Puneet
 """
 '''The below code will create linear regression and predict productivity based on the rainfall'''
-#importing all the required libreries
+#importing all the required libraries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#Reading file with pandas
+#Reading CSV file with pandas
 leni=pd.read_csv("inputdata9.csv")
 
 #assigning values for a new variable to make it easier to utilise
-indipendent_value=leni["Rainfall"]
+independent_value=leni["Rainfall"]
 dependent_value= leni["Productivity"]
 
-# Mean indipendent_value and dependent_value
-mean_ind = np.mean(indipendent_value)
+# Mean of independent_value and dependent_value
+mean_ind = np.mean(independent_value)
 mean_dep = np.mean(dependent_value)
 
 # Total number of values
-n = len(indipendent_value)
+n = len(independent_value)
 
 #Using the formula to calculate m and c
 numer = 0
 denom = 0
 for i in range (n):
-    numer += (indipendent_value[i] - mean_ind)*(dependent_value[i] - mean_dep)
-    denom += (indipendent_value[i] - mean_ind) ** 2
+    numer += (independent_value[i] - mean_ind)*(dependent_value[i] - mean_dep)
+    denom += (independent_value[i] - mean_ind) ** 2
 m = numer / denom
 c = mean_dep - (m * mean_ind)
 # Print coefficients
